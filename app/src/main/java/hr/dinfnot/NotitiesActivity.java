@@ -26,15 +26,17 @@ public class NotitiesActivity extends AppCompatActivity {
         fabAddNotitie.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                SaveNotitie(view);
+                NotitieOpslaan(view);
             }
         });
     }
 
-    public void SaveNotitie(View view) {
+    public void NotitieOpslaan(View view) {
         EditText titel = (EditText)findViewById(R.id.txtTitel);
         EditText notitie = (EditText)findViewById(R.id.txtNotitie);
-        NotitieDataProvider.SaveNotitie(titel.getText().toString(), notitie.getText().toString());
+
+        NotitieDataProvider provider = NotitieDataProvider.getProvider();
+        provider.OpslaanNotitie(titel.getText().toString(), notitie.getText().toString(), null);
 
         finish();
     }

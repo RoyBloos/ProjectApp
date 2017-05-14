@@ -2,28 +2,36 @@ package DataProviders;
 
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
 
 import Data.Notitie;
+import Data.NotitieCategorie;
 
 public class NotitieDataProvider {
 
-    public static ArrayList<Notitie> GetAllNotities()
+    private NotitieDataProvider(){}
+
+    private static NotitieDataProvider provider;
+
+    public static NotitieDataProvider getProvider(){
+        if(provider == null){
+            provider = new NotitieDataProvider();
+        }
+        return provider;
+    }
+
+    public ArrayList<Notitie> GeefAlleNotities()
     {
         ArrayList<Notitie> alleNotities = new ArrayList<>();
-        //try {
-            Iterator<Notitie> notitieIterator = Data.Notitie.findAll(Notitie.class);
+        Iterator<Notitie> notitieIterator = Data.Notitie.findAll(Notitie.class);
 
-            while (notitieIterator.hasNext()) {
-                alleNotities.add(notitieIterator.next());
-            }
-        //} catch (Exception ex){
-        //    Exception p = ex;
-        //}
+        while (notitieIterator.hasNext()) {
+            alleNotities.add(notitieIterator.next());
+        }
+
         return alleNotities;
     }
 
-    public static boolean SaveNotitie(String titel, String notitie)
+    public boolean OpslaanNotitie(String titel, String notitie, NotitieCategorie notitieCategorie)
     {
         try{
         if(titel != null && notitie != null) {

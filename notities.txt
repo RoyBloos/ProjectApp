@@ -1,0 +1,11 @@
+Notitie
+-Titel
+-Tekst
+-Categorie
+-Favoriet
+-CreationDate
+
+Categorie
+- Titel
+- Beschrijving
+
