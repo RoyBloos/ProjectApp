@@ -1,5 +1,8 @@
 package DataProviders;
 
+import com.orm.query.Condition;
+import com.orm.query.Select;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -34,14 +37,30 @@ public class NotitieDataProvider {
     public boolean OpslaanNotitie(String titel, String notitie, NotitieCategorie notitieCategorie)
     {
         try{
-        if(titel != null && notitie != null) {
-            Notitie newNotitie = new Notitie(titel, notitie);
-            newNotitie.save();
-            return true;
-        }
+            if(titel != null && notitie != null) {
+                Notitie newNotitie = new Notitie(titel, notitie);
+                newNotitie.setCategorie(notitieCategorie);
+                newNotitie.save();
+                return true;
+            }
         } catch (Exception ex){
             Exception p = ex;
         }
         return false;
+    }
+
+    public void OpslaanNotitieCategorie(String titel, String beschrijving){
+
+        NotitieCategorie newCategorie = new NotitieCategorie();
+        newCategorie.setTitel(titel);
+        newCategorie.setBeschrijving(beschrijving);
+        newCategorie.save();
+    }
+
+    public NotitieCategorie GeefNotitieCategorieOpTitel(String titel){
+        //NotitieCategorie categorie = NotitieCategorie.find(NotitieCategorie.class, "titel = ?", titel);
+        return Select.from(NotitieCategorie.class)
+                     .where(Condition.prop("titel").eq(titel))
+                     .first();
     }
 }

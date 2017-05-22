@@ -5,30 +5,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="hr.dinfnot.ListItemNotitie"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="500px"
     android:orientation="horizontal">
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="500px"
             android:orientation="vertical">
-                <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                        <TextView
-                            android:id="@+id/list_item_notitie_txtAanmaakDatum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textStyle="italic"/>
-                        <TextView
-                            android:id="@+id/list_item_notitie_txtTitel"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textStyle="bold"/>
-                </LinearLayout>
+                <!--<LinearLayout-->
+                    <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="70px"-->
+                    <!--android:orientation="horizontal">-->
+                        <!--<TextView-->
+                            <!--android:id="@+id/list_item_notitie_txtAanmaakDatum"-->
+                            <!--android:layout_width="300px"-->
+                            <!--android:layout_height="match_parent"-->
+                            <!--android:textStyle="italic"/>-->
+                        <!--<TextView-->
+                            <!--android:id="@+id/list_item_notitie_txtTitel"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="match_parent"-->
+                            <!--android:textStyle="bold"/>-->
+                <!--</LinearLayout>-->
                 <TextView
                     android:id="@+id/list_item_notitie_txtTekst"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="200px" />
         </LinearLayout>
 </LinearLayout>

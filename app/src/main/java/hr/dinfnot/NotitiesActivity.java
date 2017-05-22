@@ -10,6 +10,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+
+import Data.NotitieCategorie;
 import DataProviders.NotitieDataProvider;
 
 public class NotitiesActivity extends AppCompatActivity {
@@ -36,7 +40,9 @@ public class NotitiesActivity extends AppCompatActivity {
         EditText notitie = (EditText)findViewById(R.id.txtNotitie);
 
         NotitieDataProvider provider = NotitieDataProvider.getProvider();
-        provider.OpslaanNotitie(titel.getText().toString(), notitie.getText().toString(), null);
+        NotitieCategorie categorie = provider.GeefNotitieCategorieOpTitel("Categorie titel");
+
+        provider.OpslaanNotitie(titel.getText().toString(), notitie.getText().toString(), categorie);
 
         finish();
     }

@@ -47,17 +47,17 @@ public class NotitieListItemAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View rowView = mInflater.inflate(R.layout.list_item_notitie, parent, false);
-        TextView titleTextView = (TextView) rowView.findViewById(R.id.list_item_notitie_txtTitel);
-        TextView detailTextView = (TextView) rowView.findViewById(R.id.list_item_notitie_txtTekst);
-        TextView aanaamkDatumTextView = (TextView) rowView.findViewById(R.id.list_item_notitie_txtAanmaakDatum);
-
-
-        Notitie notitie = (Notitie) getItem(position);
-        titleTextView.setText(notitie.getTitel());
-        detailTextView.setText(notitie.getTekst());
-
-        DateFormat df = new SimpleDateFormat("dd-MM-yyyy ");
-        aanaamkDatumTextView.setText(df.format(notitie.getAanmaakDatum()));
+//        TextView titleTextView = (TextView) rowView.findViewById(R.id.list_item_notitie_txtTitel);
+//        TextView detailTextView = (TextView) rowView.findViewById(R.id.list_item_notitie_txtTekst);
+//        TextView aanaamkDatumTextView = (TextView) rowView.findViewById(R.id.list_item_notitie_txtAanmaakDatum);
+//
+//
+//        Notitie notitie = (Notitie) getItem(position);
+//
+//        titleTextView.setText(notitie.getTitel());
+//        detailTextView.setText(notitie.getTekst());
+//        DateFormat df = new SimpleDateFormat("dd-MM-yyyy ");
+//        aanaamkDatumTextView.setText(df.format(notitie.getAanmaakDatum()));
 
         return rowView;
     }
