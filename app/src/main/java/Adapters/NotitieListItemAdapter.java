@@ -10,7 +10,7 @@ import android.widget.TextView;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
+import java.util.Locale;
 
 import Data.Notitie;
 import hr.dinfnot.R;
@@ -47,18 +47,17 @@ public class NotitieListItemAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        View rowView = mInflater.inflate(R.layout.list_item_notitie, parent, false);
+        View rowView = mInflater.inflate(R.layout.notities_main_fragment_listitem, parent, false);
 
         TextView titleTextView = (TextView) rowView.findViewById(R.id.list_item_notitie_txtTitel);
         TextView detailTextView = (TextView) rowView.findViewById(R.id.list_item_notitie_txtTekst);
-        TextView aanmaakDatumTextView = (TextView) rowView.findViewById(R.id.list_item_notitie_txtAanmaakDatum);
 
         Notitie notitie = (Notitie) getItem(position);
 
-        titleTextView.setText(notitie.getTitel());
+        DateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+        String titelEnDatum = String.format(Locale.UK, "%s %s", df.format(notitie.getAanmaakDatum()), notitie.getTitel());
+        titleTextView.setText(titelEnDatum);
         detailTextView.setText(notitie.getTekst());
-        DateFormat df = new SimpleDateFormat("dd-MM-yyyy ");
-        aanmaakDatumTextView.setText(df.format(notitie.getAanmaakDatum()));
         return rowView;
     }
 }

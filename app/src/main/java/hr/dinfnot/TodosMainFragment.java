@@ -1,16 +1,15 @@
 package hr.dinfnot;
 
-import android.app.Fragment;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class TodosOverzichtFragment extends Fragment {
+public class TodosMainFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        return inflater.inflate(R.layout.content_todo_overzicht, null);
+        return inflater.inflate(R.layout.todos_main_fragment, container, false);
     }
 }

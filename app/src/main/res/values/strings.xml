@@ -1,8 +1,10 @@
 <resources>
-    <string name="app_name">DINFNOT</string>
+    <string name="app_name">Project app</string>
     <string name="action_settings">Settings</string>
-    <string name="title_activity_test">test</string>
-    <string name="title_activity_notities_overzicht">NotitiesOverzichtActivity</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_main">Project app naam</string>
+
+
     <string name="large_text">
         "Material is the metaphor.\n\n"
 
@@ -93,6 +95,5 @@
         "when a user tries to pick up one of cards.\n\n"
     </string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>

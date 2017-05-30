@@ -1,68 +1,65 @@
 package hr.dinfnot;
-
-import android.app.ActionBar;
-import android.app.Activity;
-import android.app.Fragment;
-import android.app.FragmentManager;
-import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.widget.DrawerLayout;
-import android.view.View;
-import android.view.WindowManager;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
+import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 
-public class MainActivity extends Activity{
-    private String[] menuItemNames;
-    private DrawerLayout mDrawerLayout;
-    private ListView mDrawerList;
+import Adapters.PagerAdapter;
+
+
+public class MainActivity extends AppCompatActivity {
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.mainactivity);
+        setContentView(R.layout.main_activity);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
-        menuItemNames = new String[2];
-        menuItemNames[0] = "Notities";
-        menuItemNames[1] = "Todo's";
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
+        tabLayout.addTab(tabLayout.newTab().setText("Notities"));
+        tabLayout.addTab(tabLayout.newTab().setText("Todo's"));
+        tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
-        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-        mDrawerList = (ListView) findViewById(R.id.left_drawer);
-        mDrawerList.setDivider(this.getResources().getDrawable(R.drawable.dividerColor));
-        mDrawerList.setAdapter(new ArrayAdapter(this, R.layout.drawer_list_item, menuItemNames));
-        mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
-        selectItem(0);
+        final ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
+        final PagerAdapter adapter = new PagerAdapter
+                (getSupportFragmentManager(), tabLayout.getTabCount());
+        viewPager.setAdapter(adapter);
+        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+        tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                viewPager.setCurrentItem(tab.getPosition());
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
     }
 
-    /** Swaps fragments in the main content view */
-    private void selectItem(int position) {
-        String fragmentName = menuItemNames[position];
-        Fragment fragment = null;
-        if(fragmentName == "Notities") {
-            fragment = new NotitiesOverzichtFragment();
-        } else if(fragmentName == "Todo's"){
-            fragment = new TodosOverzichtFragment();
-        }
-
-        if(fragment != null){
-            FragmentManager fragmentManager = getFragmentManager();
-
-            fragmentManager.beginTransaction()
-                    .replace(R.id.content_frame, fragment)
-                    .commit();
-
-            mDrawerList.setItemChecked(position, true);
-            setTitle(menuItemNames[position]);
-            mDrawerLayout.closeDrawer(mDrawerList);
-        }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_notities_overzicht, menu);
+        return true;
     }
 
-      private class DrawerItemClickListener implements ListView.OnItemClickListener {
-        @Override
-        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            selectItem(position);
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.action_settings) {
+            return true;
         }
 
+        return super.onOptionsItemSelected(item);
     }
 }

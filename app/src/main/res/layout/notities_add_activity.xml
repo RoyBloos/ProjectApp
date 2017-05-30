@@ -34,7 +34,7 @@
 
     <include
         android:id="@+id/include"
-        layout="@layout/content_notities" />
+        layout="@layout/notities_add_activity_content" />
 
 
 </android.support.design.widget.CoordinatorLayout>
