@@ -6,16 +6,16 @@
 
     <drawable name="dividerColor">#E0F2F1</drawable>
 
-    <color name="teal050">#E0F2F1</color>
-    <color name="teal100">#B2DFDB</color>
-    <color name="teal200">#80CBC4</color>
-    <color name="teal300">#4DB6AC</color>
-    <color name="teal400">#26A69A</color>
-    <color name="teal500">#009688</color>
-    <color name="teal600">#00897B</color>
-    <color name="teal700">#00796B</color>
-    <color name="teal800">#00695C</color>
-    <color name="teal900">#004D40</color>
+    <color name="teal050">#ECEFF1</color>
+    <color name="teal100">#CFD8DC</color>
+    <color name="teal200">#B0BEC5</color>
+    <color name="teal300">#90A4AE</color>
+    <color name="teal400">#78909C</color>
+    <color name="teal500">#607D8B</color>
+    <color name="teal600">#546E7A</color>
+    <color name="teal700">#455A64</color>
+    <color name="teal800">#37474F</color>
+    <color name="teal900">#263238</color>
 
     <color name="tealA100">#A7FFEB</color>
     <color name="tealA200">#64FFDA</color>

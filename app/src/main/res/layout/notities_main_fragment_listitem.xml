@@ -4,58 +4,49 @@
     android:layout_height="fill_parent"
 
     >
-
+    <!--android:paddingTop="1dp"-->
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="1dp"
-        android:layout_marginLeft="1dp"
-        android:layout_marginRight="1dp"
-        android:layout_marginTop="1dp"
         android:background="@color/teal050"
-        android:maxHeight="20dp"
-        android:orientation="vertical"
+        android:minHeight="50dp"
+        android:orientation="horizontal"
         tools:context="hr.dinfnot.NotitiesMainFragmentListItem">
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="80"
-                android:gravity="start"
-                android:orientation="horizontal">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:orientation="vertical">
 
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:orientation="horizontal">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="2dp"
+        android:layout_height="match_parent"
+        android:background="@drawable/bar"
+        android:orientation="vertical"
+        android:gravity="start"/>
 
-                        <TextView
-                            android:id="@+id/list_item_notitie_txtTitel"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:text="Titel"
-                            android:textColor="@color/teal700"
-                            android:textStyle="bold"
-                            />
-                    </LinearLayout>
+                <TextView
+                    android:id="@+id/list_item_notitie_txtTitel"
+                    android:layout_width="0dp"
+                    android:layout_weight="70"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:text="Titelasd"
+                    android:textColor="@color/teal700"
+                    android:textStyle="bold"
+                    android:gravity="center_vertical|start"
+                    android:textSize="15sp"
+                    />
 
-                    <TextView
-                        android:id="@+id/list_item_notitie_txtTekst"
-                        android:layout_width="300dp"
-                        android:layout_height="wrap_content"
-                        android:maxLines="4"
-                        android:text="@string/large_text"
-                        android:textColor="@color/teal700" />
-                </LinearLayout>
-            </RelativeLayout>
-
-    </LinearLayout>
+                <TextView
+                    android:id="@+id/list_item_notitie_txtDatum"
+                    android:layout_width="0dp"
+                    android:layout_weight="20"
+                    android:layout_height="match_parent"
+                    android:text="17 Maart"
+                    android:gravity="center_vertical|end"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginRight="15dp"
+                    android:textColor="@color/teal700"
+                    android:textSize="15sp"/>
+        </LinearLayout>
 </ScrollView>

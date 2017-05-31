@@ -7,7 +7,6 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -16,7 +15,7 @@ import Adapters.NotitieListItemAdapter;
 import Data.Notitie;
 import DataProviders.NotitieDataProvider;
 
-public class NotitiesMainFragment extends Fragment {
+public class NotitiesMainFragment extends Fragment{
     View view;
     private ListView notitiesListView;
     private ArrayList<Notitie> notities;

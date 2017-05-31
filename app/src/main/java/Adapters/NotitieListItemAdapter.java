@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
@@ -49,15 +50,19 @@ public class NotitieListItemAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         View rowView = mInflater.inflate(R.layout.notities_main_fragment_listitem, parent, false);
 
+
+
         TextView titleTextView = (TextView) rowView.findViewById(R.id.list_item_notitie_txtTitel);
-        TextView detailTextView = (TextView) rowView.findViewById(R.id.list_item_notitie_txtTekst);
+        TextView datumTextView = (TextView) rowView.findViewById(R.id.list_item_notitie_txtDatum);
 
         Notitie notitie = (Notitie) getItem(position);
 
-        DateFormat df = new SimpleDateFormat("dd-MM-yyyy");
-        String titelEnDatum = String.format(Locale.UK, "%s %s", df.format(notitie.getAanmaakDatum()), notitie.getTitel());
-        titleTextView.setText(titelEnDatum);
-        detailTextView.setText(notitie.getTekst());
+        DateFormat df = new SimpleDateFormat("dd MMM");
+        titleTextView.setText(notitie.getTitel());
+        datumTextView.setText(df.format(notitie.getAanmaakDatum()));
+
         return rowView;
     }
+
+
 }
