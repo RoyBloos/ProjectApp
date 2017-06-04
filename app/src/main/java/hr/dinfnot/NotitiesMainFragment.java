@@ -2,11 +2,11 @@ package hr.dinfnot;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -22,20 +22,29 @@ public class NotitiesMainFragment extends Fragment{
     private NotitieListItemAdapter notitieListItemAdapter;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, final ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.notities_main_fragment, container, false);
         notitiesListView = (ListView)view.findViewById(R.id.notities_list_view);
-        notitiesListView.setDivider(this.getResources().getDrawable(R.drawable.dividerColor));
-        notitiesListView.setDividerHeight(20);
 
-        FloatingActionButton fab = (FloatingActionButton)view.findViewById(R.id.notitietoevoegen);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getContext(), NotitiesActivity.class);
-                startActivity(intent);
-            }
-        });
+        notitiesListView.setOnItemClickListener(new AdapterView.OnItemClickListener()
+                                            {
+                                                @Override
+                                                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                                                    Intent myIntent = new Intent(getActivity(), NotitiesEditActivity.class);
+                                                    myIntent.putExtra("NotitieId", notities.get(position).getId());
+                                                    getActivity().startActivity(myIntent);
+                                                }
+                                            }
+        );
+
+//        FloatingActionButton fab = (FloatingActionButton)view.findViewById(R.id.notitietoevoegen);
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(getContext(), NotitiesActivity.class);
+//                startActivity(intent);
+//            }
+//        });
 
         return view;
     }
@@ -57,5 +66,9 @@ public class NotitiesMainFragment extends Fragment{
             notitieListItemAdapter.getData().addAll(notities);
         }
         notitieListItemAdapter.notifyDataSetChanged();
+    }
+
+    private void ShowToast(){
+
     }
 }

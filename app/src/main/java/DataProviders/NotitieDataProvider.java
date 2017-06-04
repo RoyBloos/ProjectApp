@@ -58,9 +58,15 @@ public class NotitieDataProvider {
     }
 
     public NotitieCategorie GeefNotitieCategorieOpTitel(String titel){
-        //NotitieCategorie categorie = NotitieCategorie.find(NotitieCategorie.class, "titel = ?", titel);
         return Select.from(NotitieCategorie.class)
                      .where(Condition.prop("titel").eq(titel))
                      .first();
     }
+
+    public Notitie GeefNotitieOpId(Long notitieId){
+        return Select.from(Notitie.class)
+                     .where(Condition.prop("id").eq(notitieId))
+                     .first();
+    }
+
 }

@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
         <ListView
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -11,7 +12,6 @@
             android:layout_height="wrap_content"
             android:id="@+id/notities_list_view"
             android:background="@color/teal050"
-            android:dividerHeight="20.0sp"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
             tools:context="hr.dinfnot.NotitiesOverzichtActivity"
             />
@@ -24,7 +24,7 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:src="@drawable/ic_notitie_toevoegen"
-            android:background="@color/teal700"
+            app:backgroundTint="@color/teal700"
             />
 
 

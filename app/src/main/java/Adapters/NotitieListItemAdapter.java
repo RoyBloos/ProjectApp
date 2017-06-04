@@ -50,8 +50,6 @@ public class NotitieListItemAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         View rowView = mInflater.inflate(R.layout.notities_main_fragment_listitem, parent, false);
 
-
-
         TextView titleTextView = (TextView) rowView.findViewById(R.id.list_item_notitie_txtTitel);
         TextView datumTextView = (TextView) rowView.findViewById(R.id.list_item_notitie_txtDatum);
 

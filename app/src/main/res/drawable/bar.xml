@@ -3,9 +3,9 @@
     <item>
         <shape android:shape="rectangle"
             android:layout_height="match_parent"
-            android:layout_width="1dp"
+            android:layout_width="5dp"
             android:background="@color/teal700">
-            <solid android:color="@color/teal700" />
+            <solid android:color="@color/tealA700" />
         </shape>
     </item>
 
