@@ -1,10 +1,15 @@
 package hr.dinfnot;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
@@ -13,6 +18,8 @@ import DataProviders.NotitieDataProvider;
 
 public class NotitiesEditActivity extends AppCompatActivity {
     private Notitie notitie;
+    private EditText titleTextView;
+    private EditText notitieTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,39 +29,29 @@ public class NotitiesEditActivity extends AppCompatActivity {
         if(notitieId > 0) {
             NotitieDataProvider provider = NotitieDataProvider.getProvider();
             notitie = provider.GeefNotitieOpId(notitieId);
-
-            TextView titleTextView = (TextView) findViewById(R.id.notitie_view_txtTitel);
-            TextView datumTextView = (TextView) findViewById(R.id.notitie_view_txtDatum);
-            TextView notitieTextView = (TextView) findViewById(R.id.notitie_view_txtNotitie);
-
-            DateFormat df = new SimpleDateFormat("dd MMM");
-            titleTextView.setText(notitie.getTitel());
-            datumTextView.setText(df.format(notitie.getAanmaakDatum()));
-            notitieTextView.setText(notitie.getTekst());
-        }
-//        FloatingActionButton fab = (FloatingActionButton)view.findViewById(R.id.notitieverwijderen);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(getContext(), NotitiesActivity.class);
-//                startActivity(intent);
-//            }
-//        });
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_notitie_edit, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
+        } else{
+            notitie = new Notitie("", "");
         }
 
-        return super.onOptionsItemSelected(item);
+        titleTextView = (EditText) findViewById(R.id.notitie_edit_txtTitel);
+        TextView datumTextView = (TextView) findViewById(R.id.notitie_edit_txtDatum);
+        notitieTextView = (EditText) findViewById(R.id.notitie_edit_txtNotitie);
+
+        DateFormat df = new SimpleDateFormat("dd MMM");
+        titleTextView.setText(notitie.getTitel());
+        datumTextView.setText(df.format(notitie.getAanmaakDatum()));
+        notitieTextView.setText(notitie.getTekst());
+
+        FloatingActionButton fab = (FloatingActionButton)findViewById(R.id.notitiesave);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                notitie.setTitel(titleTextView.getText().toString());
+                notitie.setTekst(notitieTextView.getText().toString());
+
+                notitie.save();
+                finish();
+            }
+        });
     }
 }

@@ -4,7 +4,9 @@ import com.orm.query.Condition;
 import com.orm.query.Select;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
+import java.util.List;
 
 import Data.Notitie;
 import Data.NotitieCategorie;
@@ -24,13 +26,19 @@ public class NotitieDataProvider {
 
     public ArrayList<Notitie> GeefAlleNotities()
     {
+        List<Notitie> x =  Select.from(Notitie.class)
+                .orderBy("")
+                .list();
+
+
+
         ArrayList<Notitie> alleNotities = new ArrayList<>();
         Iterator<Notitie> notitieIterator = Data.Notitie.findAll(Notitie.class);
 
         while (notitieIterator.hasNext()) {
             alleNotities.add(notitieIterator.next());
         }
-
+        Collections.reverse(alleNotities);
         return alleNotities;
     }
 

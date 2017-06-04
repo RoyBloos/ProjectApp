@@ -5,7 +5,7 @@
             android:layout_height="match_parent"
             android:layout_width="5dp"
             android:background="@color/teal700">
-            <solid android:color="@color/tealA700" />
+            <solid android:color="?attr/colorAccent" />
         </shape>
     </item>
 

@@ -2,6 +2,7 @@ package hr.dinfnot;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -30,21 +31,21 @@ public class NotitiesMainFragment extends Fragment{
                                             {
                                                 @Override
                                                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                                                    Intent myIntent = new Intent(getActivity(), NotitiesEditActivity.class);
+                                                    Intent myIntent = new Intent(getActivity(), NotitiesViewActivity.class);
                                                     myIntent.putExtra("NotitieId", notities.get(position).getId());
                                                     getActivity().startActivity(myIntent);
                                                 }
                                             }
         );
 
-//        FloatingActionButton fab = (FloatingActionButton)view.findViewById(R.id.notitietoevoegen);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(getContext(), NotitiesActivity.class);
-//                startActivity(intent);
-//            }
-//        });
+        FloatingActionButton fab = (FloatingActionButton)view.findViewById(R.id.notitietoevoegen);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(getActivity(), NotitiesEditActivity.class);
+                getActivity().startActivity(myIntent);
+            }
+        });
 
         return view;
     }

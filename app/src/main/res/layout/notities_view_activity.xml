@@ -26,22 +26,22 @@
                     android:gravity="start"
                     android:orientation="vertical" />
 
-                <EditText
-                    android:id="@+id/notitie_edit_txtTitel"
+                <TextView
+                    android:id="@+id/notitie_view_txtTitel"
                     android:layout_width="10dp"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="15dp"
                     android:layout_marginStart="15dp"
                     android:layout_weight="70"
+                    android:focusable="false"
                     android:gravity="center_vertical|start"
                     android:text="Titelasd"
                     android:textColor="@color/teal700"
                     android:textSize="15sp"
-                    android:textStyle="bold"
-                    android:inputType="textAutoComplete"/>
+                    android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/notitie_edit_txtDatum"
+                    android:id="@+id/notitie_view_txtDatum"
                     android:layout_width="10dp"
                     android:layout_height="match_parent"
                     android:layout_weight="20"
@@ -55,24 +55,24 @@
 
         <ScrollView
             android:id="@+id/scrollNotitie"
-            android:layout_height="0dp"
+            android:layout_height="match_parent"
             android:layout_width="match_parent"
             android:layout_weight="80"
             >
-                <EditText
-                    android:id="@+id/notitie_edit_txtNotitie"
+                <TextView
+                    android:id="@+id/notitie_view_txtNotitie"
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
+                    android:layout_height="wrap_content"
                     android:text="@string/large_text"
                     android:textColor="@color/teal700"
                     android:textStyle="bold"
                     android:gravity="start|top"
                     android:textSize="15sp"
+                    android:focusable="false"
                     android:layout_marginLeft="1dp"
                     android:layout_marginStart="1dp"
-                    android:inputType="textMultiLine"
+                    android:autoLink="web"
                     android:linksClickable="true"
-                    android:lines="15"
                     />
         </ScrollView>
 
@@ -86,13 +86,23 @@
                     android:layout_weight="1" />
 
                 <android.support.design.widget.FloatingActionButton
-                    android:id="@+id/notitiesave"
+                    android:id="@+id/notitiebewerken"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_save"
+                    android:src="@drawable/ic_edit"
+                    android:layout_gravity="center_vertical"
+                    app:backgroundTint="@color/teal700"
+                    android:layout_margin="10dp"
+                    />
+
+                <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/notitieverwijderen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_delete"
                     android:gravity="right"
                     app:backgroundTint="@color/teal700"
-                    app:background="?attr/colorAccent"
+                    app:background="@color/tealA200"
                     android:layout_margin="10dp"
                     />
         </LinearLayout>
