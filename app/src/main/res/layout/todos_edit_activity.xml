@@ -35,7 +35,7 @@
             android:layout_weight="70"
             android:gravity="center_vertical|start"
             android:text="Titelasd"
-            android:textColor="@color/teal700"
+            android:textColor="@color/colorText"
             android:textSize="15sp"
             android:textStyle="bold"
             android:inputType="textAutoComplete"/>
@@ -48,7 +48,7 @@
             android:focusable="false"
             android:gravity="center_vertical|end"
             android:text="17 Maart"
-            android:textColor="@color/teal700"
+            android:textColor="@color/colorText"
             android:textSize="15sp" />
 
     </LinearLayout>
@@ -64,7 +64,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:text="@string/large_text"
-            android:textColor="@color/teal700"
+            android:textColor="@color/colorText"
             android:textStyle="bold"
             android:gravity="start|top"
             android:textSize="15sp"
@@ -91,7 +91,7 @@
             android:layout_height="wrap_content"
             android:src="@drawable/ic_save"
             android:gravity="right"
-            app:backgroundTint="@color/teal700"
+            app:backgroundTint="@color/colorPrimary"
             app:background="?attr/colorAccent"
             android:layout_margin="10dp"
             />

@@ -48,6 +48,8 @@
                     android:focusable="false"
                     android:gravity="center_vertical|end"
                     android:text="17 Maart"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginRight="15dp"
                     android:textColor="@color/teal700"
                     android:textSize="15sp" />
 
@@ -79,7 +81,7 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="end">
+            android:gravity="center_horizontal">
                 <View
                     android:layout_width="0dp"
                     android:layout_height="0dp"
@@ -90,8 +92,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_edit"
-                    android:layout_gravity="center_vertical"
-                    app:backgroundTint="@color/teal700"
+                    android:gravity="center_horizontal"
+                    app:backgroundTint="@color/colorPrimary"
                     android:layout_margin="10dp"
                     />
 
@@ -100,9 +102,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_delete"
-                    android:gravity="right"
-                    app:backgroundTint="@color/teal700"
-                    app:background="@color/tealA200"
+                    android:gravity="center_horizontal"
+                    app:backgroundTint="@color/colorPrimary"
+                    app:background="@color/colorAccent"
                     android:layout_margin="10dp"
                     />
         </LinearLayout>

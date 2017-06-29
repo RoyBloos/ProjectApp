@@ -6,10 +6,6 @@ import java.util.Date;
 
 public class Notitie extends SugarRecord {
     private String titel;
-    private String tekst;
-    private boolean favoriet;
-    private Date aanmaakDatum;
-    private NotitieCategorie categorie;
 
     public String getTitel() {
         return titel;
@@ -19,6 +15,8 @@ public class Notitie extends SugarRecord {
         this.titel = titel;
     }
 
+    private String tekst;
+
     public String getTekst() {
         return tekst;
     }
@@ -27,38 +25,33 @@ public class Notitie extends SugarRecord {
         this.tekst = tekst;
     }
 
-    public boolean isFavoriet() {
+    private boolean favoriet;
+
+    public void setFavoriet(boolean favoriet) {
+        this.favoriet = favoriet;
+    }
+
+    public boolean getFavoriet() {
         return favoriet;
     }
 
-    public void setFavoriet(boolean favoriet) {
-        favoriet = favoriet;
-    }
+    private Date aanmaakdatum;
 
     public Date getAanmaakDatum() {
-        return aanmaakDatum;
+        return aanmaakdatum;
     }
 
-    public void setAanmaakDatum(Date aanmaakDatum) {
-        aanmaakDatum = aanmaakDatum;
+    public void setAanmaakDatum(Date aanmaakdatum) {
+        this.aanmaakdatum = aanmaakdatum;
     }
 
-    public NotitieCategorie getCategorie() {
-        return categorie;
-    }
-
-    public void setCategorie(NotitieCategorie categorie) {
-        this.categorie = categorie;
-    }
-
-    public Notitie(){
+    public Notitie() {
         super();
     }
 
-    public Notitie(String titel, String tekst){
-        this.titel = titel;
-        this.tekst = tekst;
-        this.favoriet = false;
-        this.aanmaakDatum = new Date();
+    public Notitie(String titel, String tekst) {
+        setTitel(titel);
+        setTekst(tekst);
+        setAanmaakDatum(new Date());
     }
 }

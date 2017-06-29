@@ -6,10 +6,6 @@ import java.util.Date;
 
 public class ToDo extends SugarRecord {
     private String titel;
-    private String tekst;
-    private boolean favoriet;
-    private Date aanmaakDatum;
-    private ToDoCategorie categorie;
 
     public String getTitel() {
         return titel;
@@ -19,6 +15,8 @@ public class ToDo extends SugarRecord {
         this.titel = titel;
     }
 
+    private String tekst;
+
     public String getTekst() {
         return tekst;
     }
@@ -27,38 +25,29 @@ public class ToDo extends SugarRecord {
         this.tekst = tekst;
     }
 
-    public boolean isFavoriet() {
-        return favoriet;
-    }
+    private boolean gedaan;
 
-    public void setFavoriet(boolean favoriet) {
-        favoriet = favoriet;
-    }
+    public boolean getGedaan() { return gedaan; }
+
+    public void setGedaan(boolean gedaan) { this.gedaan = gedaan; }
+
+    private Date aanmaakDatum;
 
     public Date getAanmaakDatum() {
         return aanmaakDatum;
     }
 
     public void setAanmaakDatum(Date aanmaakDatum) {
-        aanmaakDatum = aanmaakDatum;
+        this.aanmaakDatum = aanmaakDatum;
     }
 
-    public ToDoCategorie getCategorie() {
-        return categorie;
-    }
-
-    public void setCategorie(ToDoCategorie categorie) {
-        this.categorie = categorie;
-    }
-
-    public ToDo(){
+    public ToDo() {
         super();
     }
 
-    public ToDo(String titel, String tekst){
-        this.titel = titel;
-        this.tekst = tekst;
-        this.favoriet = false;
-        this.aanmaakDatum = new Date();
+    public ToDo(String titel, String tekst) {
+        setTitel(titel);
+        setTekst(tekst);
+        setAanmaakDatum(new Date());
     }
 }

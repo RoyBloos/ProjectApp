@@ -10,7 +10,7 @@
         android:id="@+id/boven"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/teal050"
+        android:background="@color/colorBackgroundLight"
         android:focusable="false"
         android:minHeight="50dp"
         android:orientation="horizontal"
@@ -36,7 +36,7 @@
             android:focusable="false"
             android:gravity="center_vertical|start"
             android:text="Titelasd"
-            android:textColor="@color/teal700"
+            android:textColor="@color/colorText"
             android:textSize="15sp"
             android:textStyle="bold" />
 
@@ -48,8 +48,10 @@
             android:focusable="false"
             android:gravity="center_vertical|end"
             android:text="17 Maart"
-            android:textColor="@color/teal700"
-            android:textSize="15sp" />
+            android:textColor="@color/colorText"
+            android:textSize="15sp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginRight="15dp"/>
 
     </LinearLayout>
 
@@ -91,7 +93,7 @@
             android:layout_height="wrap_content"
             android:src="@drawable/ic_edit"
             android:layout_gravity="center_vertical"
-            app:backgroundTint="@color/teal700"
+            app:backgroundTint="@color/colorPrimary"
             android:layout_margin="10dp"
             />
 
@@ -101,8 +103,8 @@
             android:layout_height="wrap_content"
             android:src="@drawable/ic_delete"
             android:gravity="right"
-            app:backgroundTint="@color/teal700"
-            app:background="@color/tealA200"
+            app:backgroundTint="@color/colorPrimary"
+            app:background="@color/colorAccent"
             android:layout_margin="10dp"
             />
     </LinearLayout>

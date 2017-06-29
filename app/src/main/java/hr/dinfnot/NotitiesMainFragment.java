@@ -20,6 +20,11 @@ public class NotitiesMainFragment extends Fragment{
     View view;
     private ListView notitiesListView;
     private ArrayList<Notitie> notities;
+
+    public NotitieListItemAdapter getNotitieListItemAdapter() {
+        return notitieListItemAdapter;
+    }
+
     private NotitieListItemAdapter notitieListItemAdapter;
 
     @Override
@@ -67,9 +72,5 @@ public class NotitiesMainFragment extends Fragment{
             notitieListItemAdapter.getData().addAll(notities);
         }
         notitieListItemAdapter.notifyDataSetChanged();
-    }
-
-    private void ShowToast(){
-
     }
 }

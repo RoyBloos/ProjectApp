@@ -12,7 +12,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/notities_list_view"
-            android:background="@color/teal050"
+            android:background="@color/colorBackgroundLight"
             android:layout_weight="1"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
             tools:context="hr.dinfnot.NotitiesOverzichtActivity"
@@ -22,8 +22,8 @@
             android:id="@+id/notitietoevoegen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
+            android:layout_gravity="end"
             android:layout_margin="10dp"
             android:src="@drawable/ic_notitie_toevoegen"
-            app:backgroundTint="@color/teal700" />
+            app:backgroundTint="@color/colorPrimary" />
 </LinearLayout>

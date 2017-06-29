@@ -3,6 +3,8 @@
     <color name="colorPrimary">@color/teal700</color>
     <color name="colorPrimaryDark">@color/teal800</color>
     <color name="colorAccent">@color/teal300</color>
+    <color name="colorBackgroundLight">@color/teal050</color>
+    <color name="colorText">@color/teal700</color>
 
     <drawable name="dividerColor">#E0F2F1</drawable>
 
