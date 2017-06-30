@@ -5,11 +5,12 @@ import com.orm.query.Select;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Date;
 import java.util.Iterator;
 
 import Data.ToDo;
 
-public class ToDoDataProvider {
+public class ToDoDataProvider implements IDemoDataVisitable{
 
     private ToDoDataProvider() {
     }
@@ -41,4 +42,16 @@ public class ToDoDataProvider {
                 .first();
     }
 
+    public void maakTodo(String titel, String tekst){
+        ToDo newToDo = new ToDo();
+        newToDo.setTekst(tekst);
+        newToDo.setTitel(titel);
+        newToDo.setAanmaakDatum(new Date());
+        newToDo.save();
+    }
+
+    @Override
+    public void accept(IDemoDataVisitor visitor) {
+        visitor.visit(this);
+    }
 }
